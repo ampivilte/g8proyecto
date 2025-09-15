@@ -3,10 +3,12 @@ import {Route, Switch} from 'react-router-dom';
 import Home from "./Screens/Home"
 import ScreenDetalle from './Screens/ScreenDetalle/Screendetalle';
 import ScreenVerTodasTopRating from './Screens/VerTodasTopRated/VerTodasTopRated';
+import Header from './Components/Header/Header';
 
 function App() {
   return (
    <>
+      <Header/>
      
       <Switch>
         <Route path="/"  exact={true} component={Home}/>
