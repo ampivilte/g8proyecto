@@ -30,7 +30,7 @@ class TopRated extends Component {
                 
                 }
                  </section>
-               
+               <h5> <Link to ={`/VerTodasTopRating`}>Ver Todas</Link></h5>
                 </div>
                 }
                 

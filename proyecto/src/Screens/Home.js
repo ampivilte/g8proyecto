@@ -1,6 +1,7 @@
 import React from 'react'
 import {Component} from 'react'
 import TopRated from '../Components/TopRated/TopRated'
+import Upcoming from '../Components/Upcoming/Upcoming'
 import "./styles.css"
 
 
@@ -13,6 +14,7 @@ class Home extends Component {
         return(
             <div class="container">
                 <TopRated/>
+                <Upcoming/>
             </div>
         )
     }
