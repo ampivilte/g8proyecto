@@ -12,7 +12,7 @@ function App() {
         <Route path="/"  exact={true} component={Home}/>
         <Route path="/detalle/pelicula/:id" component={ScreenDetalle}/>
         <Route path="/VerTodasTopRating" component={ScreenVerTodasTopRating}/>
-        <Route/>
+      
 
       </Switch>
       
