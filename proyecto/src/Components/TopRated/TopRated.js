@@ -9,6 +9,7 @@ class TopRated extends Component {
         super ()
         this.state= {
             peliculas: [],
+            favoritos: localStorage.getItem('favoritos') !==null ? localStorage.getItem('favoritos'): []
 
         }
     }
@@ -18,6 +19,9 @@ class TopRated extends Component {
         .then(data => this.setState({peliculas : data.results}))
         .catch(e => console.log(e))
     }
+    actualizarFav(array){
+        this.setState({favoritos: array})
+    }
 
     render(){
         let top5 = this.state.peliculas.slice(0,5)
@@ -26,7 +30,7 @@ class TopRated extends Component {
                 {this.state.peliculas == null ? <h1>Cargando</h1> : <div> <h1>Top Rating Peliculas:</h1>
                 <section class="row cards" id="movies">
                 {
-                    top5.map(( elm, idx) => <TarjetaPelicula   data= {elm}  key={idx + elm.title}/>)
+                    top5.map(( elm, idx) => <TarjetaPelicula favorito={this.state.favoritos.includes(elm.id)}  actualizarFav={(array) => this.actualizarFav(array)}data= {elm}  key={idx + elm.title}/>)
                 
                 }
                  </section>
