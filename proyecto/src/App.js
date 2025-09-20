@@ -7,7 +7,7 @@ import Header from './Components/Header/Header';
 import Favoritos from './Screens/Favoritos/Favoritos';
 import Footer from './Components/Footer/Footer';
 import ScreenVerTodasUpcoming from './Screens/VerTodasUpcoming/VerTodasUpcoming';
-
+import NotFound from './Components/NotFound/NotFound';
 function App() {
   return (
    <>
@@ -19,6 +19,7 @@ function App() {
         <Route path="/VerTodasTopRating" component={ScreenVerTodasTopRating}/>
         <Route path='/favoritos' component={Favoritos}/>
         <Route path="/VerTodasUpcoming" component={ScreenVerTodasUpcoming}/>
+<Route path="*" component={NotFound}/>
 
       </Switch>
 
