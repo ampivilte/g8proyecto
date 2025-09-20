@@ -6,6 +6,7 @@ import ScreenVerTodasTopRating from './Screens/VerTodasTopRated/VerTodasTopRated
 import Header from './Components/Header/Header';
 import Favoritos from './Screens/Favoritos/Favoritos';
 import Footer from './Components/Footer/Footer';
+import ScreenVerTodasUpcoming from './Screens/VerTodasUpcoming/VerTodasUpcoming';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
         <Route path="/detalle/pelicula/:id" component={ScreenDetalle}/>
         <Route path="/VerTodasTopRating" component={ScreenVerTodasTopRating}/>
         <Route path='/favoritos' component={Favoritos}/>
-     
+        <Route path="/VerTodasUpcoming" component={ScreenVerTodasUpcoming}/>
 
       </Switch>
 
