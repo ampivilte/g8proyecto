@@ -5,6 +5,7 @@ import ScreenDetalle from './Screens/ScreenDetalle/Screendetalle';
 import ScreenVerTodasTopRating from './Screens/VerTodasTopRated/VerTodasTopRated';
 import Header from './Components/Header/Header';
 import Favoritos from './Screens/Favoritos/Favoritos';
+import Footer from './Components/Footer/Footer';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
      
 
       </Switch>
+
+      <Footer/>
       
     </>
   );
