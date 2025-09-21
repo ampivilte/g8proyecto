@@ -8,7 +8,7 @@ class VerTodasTopRating extends Component {
              peliculas: [],
              listaCompleta: [],
              pag: 1,
-             query: ''
+             busqueda: ''
         };
     }
 
@@ -35,18 +35,37 @@ class VerTodasTopRating extends Component {
         .catch(e => console.log(e))
     }
 
+    evitarSubmit(event) {
+        event.preventDefault();
+    }
+
+    filtrarContenido(event) {
+        let texto = event.target.value.toLowerCase();
+        let todas = this.state.listaCompleta;
+
+        this.setState({busqueda: event.target.value});
+
+        texto === "" ? this.setState({peliculas: todas}) : this.setState({peliculas: todas.filter(peli => peli.title.toLowerCase()).includes(texto)});
+    }
+
+
     render() {
         return(
             <div className="Buscar">
+
+                <form onSubmit={(e) => this.evitarSubmit(e)}>
+                    <input type='text' placeholder='Buscar por título...' value={this.state.busqueda} onChange={(e) => this.filtrarContenido(e)}/>
+                </form>
+
                 {
-                    this.state.peliculas.length === 0 ? <h1>Cargando...</h1> : 
+                    this.state.peliculas.length === 0 ? <h1>Cargando...</h1> :
                     <div>
                         {this.state.peliculas.map((elm, idx) => <TarjetaPelicula data={elm} key={idx + elm.title}/>)}
                         <button onClick={() => this.cargarMas()}> Cargar más </button>
                     </div>
                 }
             </div>
-        );
+        ); 
     }
 }
 

@@ -19,7 +19,7 @@ function App() {
         <Route path="/VerTodasTopRating" component={ScreenVerTodasTopRating}/>
         <Route path='/favoritos' component={Favoritos}/>
         <Route path="/VerTodasUpcoming" component={ScreenVerTodasUpcoming}/>
-<Route path="*" component={NotFound}/>
+        <Route path="" component={NotFound}/>
 
       </Switch>
 
