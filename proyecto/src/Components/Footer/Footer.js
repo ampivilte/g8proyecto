@@ -7,19 +7,10 @@ function Footer() {
         <footer className="app-footer">
             <div className="footer-top">
                 <div className="brand">
-                    <img className="logo"/> poner el logo acá
+                    <img src="image.png"/>
                 </div>
 
                 <nav className="footer-nav">
-                    <Link to="/favoritos"> Favoritos </Link>
-                    <Link to="/VerTodasTopRating"> Top Rating</Link>
-                    <Link to="/Upcoming"> Próximos Estrenos </Link>
-                </nav>
-            </div>
-
-           
-            <div className="footer-bottom">
-                <nav>
                     <ul className="team">
                         <li>Solana Alak</li>
                         <li>Lucy Amparo Vilte</li>
@@ -27,7 +18,6 @@ function Footer() {
                     </ul>
                 </nav>
             </div>
-            
         </footer>
     )
 }

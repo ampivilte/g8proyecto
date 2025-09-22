@@ -32,42 +32,13 @@
     border: 1px solid rgba(255,255,255,0.22);
     box-shadow: 0 6px 16px #0c3a3688;
   }
+
+  .app-footer img{ height:60px; width:auto; object-fit:contain; }
+
   .app-footer .brand .name{
     font-weight: 700; color: var(--text-1);
   }
   
-  /* navegación del footer (chips) */
-  .app-footer .footer-nav{
-    display:flex; align-items:center; flex-wrap:wrap; gap:10px;
-  }
-  .app-footer .footer-nav a{
-    text-decoration:none;
-    padding: 8px 12px;
-    border-radius: 999px;
-    color: var(--text-1);
-    background: rgba(255,255,255,.10);
-    border: 1px solid rgba(255,255,255,.18);
-    transition: background .15s ease, transform .12s ease;
-  }
-  .app-footer .footer-nav a:hover{
-    background: rgba(255,255,255,.14);
-    transform: translateY(-1px);
-  }
-  
-  /* separador y fila inferior: créditos / equipo */
-  .app-footer .footer-bottom{
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255,255,255,.12);
-  
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    font-size: var(--fs-1);
-    color: var(--text-3);
-  }
   
   /* lista de equipo en línea */
   .app-footer .team{
@@ -100,10 +71,6 @@
   border: none !important;
   box-shadow: none !important;
 }
-
-/* Quitar bullets y márgenes por defecto */
-.app-footer ul { list-style: none; margin: 0; padding: 0; }
-
 /* Mantener los chips de navegación con look glass */
 .app-footer .footer-nav { display: flex; flex-wrap: wrap; gap: 10px; }
 .app-footer .footer-nav a{

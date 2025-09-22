@@ -6,14 +6,14 @@ function Header() {
     return (
         <header className="app-header">
             <div>
-                <img src="logo"/>
+                <img src="image.png"/>
             </div>
 
             <nav>
                 <ul>
                     <li><Link to="/"> Home </Link></li>
                     <li><Link to="/favoritos"> Favoritos </Link></li>
-                    <li><Link to="/VerTodasTopRating"> Top Rating</Link></li>
+                    <li><Link to="/VerTodasTopRating"> Top Rated</Link></li>
                     <li><Link to="/VerTodasUpcoming"> Próximos Estrenos </Link></li>
                 </ul>
             </nav>

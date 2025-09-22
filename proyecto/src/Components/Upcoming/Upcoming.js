@@ -34,7 +34,7 @@ class Upcoming extends Component {
                 
                 }
                  </section>
-                 <h5> <Link to ={`/VerTodasUpcoming`}>Ver Todas</Link></h5>
+                 <h5> <Link to ={`/VerTodasUpcoming`} className="link-ver-todas">Ver Todas</Link></h5>
                 </div>
                 }
                 
