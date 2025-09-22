@@ -1,0 +1,51 @@
+/* src/styles/globals.css */
+:root{
+  --bg-1:#093298;
+  --text-1:#e9edf1;
+  --text-2:#c7cbd6;
+
+  /* glass */
+  --glass: rgba(255,255,255,.08);
+  --border: rgba(255,255,255,.18);
+  --blur: 18px;
+
+  /* radios & sombras */
+  --r-xl:28px;
+  --shadow-1: 0 12px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%}
+body{
+  background: linear-gradient(180deg,#0c0e13,#12141b);
+  color:var(--text-1);
+  font-family: system-ui, -apple-system, "SF Pro Text", Inter, Roboto, Arial, sans-serif;
+}
+
+/* src/App.css */
+.page{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding: clamp(16px,3vw,32px);
+}
+
+.panel{
+  width: min(1200px, 95vw);
+  min-height: min(720px, 88vh);
+  border-radius: var(--r-xl);
+  background: var(--glass);
+  backdrop-filter: blur(var(--blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(140%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-1);
+  padding: clamp(16px, 2.5vw, 28px);
+  display:flex;
+  flex-direction:column;
+  gap: 24px;
+}
+
+.marca{
+  opacity:.75;
+  color:var(--text-2);
+}
+

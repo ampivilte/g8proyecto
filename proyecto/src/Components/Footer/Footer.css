@@ -1,0 +1,146 @@
+/* ===== FOOTER (teal-glass) ===== */
+.app-footer{
+    margin-top: 28px;
+    border-radius: 18px;
+    padding: 16px 20px;
+  
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(14px) saturate(150%);
+    -webkit-backdrop-filter: blur(14px) saturate(150%);
+    box-shadow: 0 10px 26px rgba(0,0,0,.35);
+    color: var(--text-2);
+  }
+  
+  /* fila superior: logo/nombre a la izq, navegación a la der */
+  .app-footer .footer-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  /* marca (logo + texto) */
+  .app-footer .brand{
+    display:flex; align-items:center; gap:12px;
+    min-width: 180px;
+  }
+  .app-footer .brand .logo{
+    width: 36px; height: 36px; border-radius: 10px;
+    background: linear-gradient(135deg, #58d0c6, #1aa59a);
+    border: 1px solid rgba(255,255,255,0.22);
+    box-shadow: 0 6px 16px #0c3a3688;
+  }
+  .app-footer .brand .name{
+    font-weight: 700; color: var(--text-1);
+  }
+  
+  /* navegación del footer (chips) */
+  .app-footer .footer-nav{
+    display:flex; align-items:center; flex-wrap:wrap; gap:10px;
+  }
+  .app-footer .footer-nav a{
+    text-decoration:none;
+    padding: 8px 12px;
+    border-radius: 999px;
+    color: var(--text-1);
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.18);
+    transition: background .15s ease, transform .12s ease;
+  }
+  .app-footer .footer-nav a:hover{
+    background: rgba(255,255,255,.14);
+    transform: translateY(-1px);
+  }
+  
+  /* separador y fila inferior: créditos / equipo */
+  .app-footer .footer-bottom{
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,.12);
+  
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: var(--fs-1);
+    color: var(--text-3);
+  }
+  
+  /* lista de equipo en línea */
+  .app-footer .team{
+    list-style:none; display:flex; gap:12px; margin:0; padding:0;
+  }
+  .app-footer .team li a{
+    color: var(--text-2); text-decoration:none;
+    border-bottom: 1px dashed rgba(255,255,255,.25);
+  }
+  .app-footer .team li a:hover{
+    color: var(--text-1);
+    border-bottom-color: transparent;
+  }
+  
+  /* responsive */
+  @media (max-width: 720px){
+    .app-footer{ padding: 14px 14px; border-radius: 16px; }
+    .app-footer .footer-nav a{ padding: 7px 10px; }
+  }
+  
+  /* ===== RESET LOCAL: elimino fondos heredados blancos ===== */
+.app-footer nav,
+.app-footer nav ul,
+.app-footer nav li,
+.app-footer ul,
+.app-footer li,
+.app-footer p,
+.app-footer small {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Quitar bullets y márgenes por defecto */
+.app-footer ul { list-style: none; margin: 0; padding: 0; }
+
+/* Mantener los chips de navegación con look glass */
+.app-footer .footer-nav { display: flex; flex-wrap: wrap; gap: 10px; }
+.app-footer .footer-nav a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-1);
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.18);
+  transition: background .15s ease, transform .12s ease;
+}
+.app-footer .footer-nav a:hover{
+  background: rgba(255,255,255,.14);
+  transform: translateY(-1px);
+}
+
+/* Fila inferior (copyright + equipo) sin fondo blanco */
+.app-footer .footer-bottom{
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; flex-wrap:wrap;
+  color: var(--text-3);
+}
+.app-footer .team{ display:flex; gap:12px; }
+.app-footer .team li { background: transparent !important; }
+.app-footer .team li a{
+  color: var(--text-2);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,.25);
+}
+.app-footer .team li a:hover{
+  color: var(--text-1);
+  border-bottom-color: transparent;
+}
+

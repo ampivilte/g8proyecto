@@ -44,23 +44,24 @@ class TarjetaPelicula extends Component {
         }
       }
     sacarFav(id){
-        let local = localStorage.getItem('favoritos');
-        let storageParseado = JSON.parse(local);
-        let filtrado = storageParseado.filter((elm) => elm !== id);
-      
-        if (this.props.actualizarFav) {
-          this.props.actualizarFav(filtrado);
-        }
-      
-        let String = JSON.stringify(filtrado);
-        localStorage.setItem('favoritos', String);
-      }
+        let local = localStorage.getItem('favoritos')
+        let storageParseado = JSON.parse(local)
+        let filtrado = storageParseado.filter((elm) => elm !== id)
+        this.props.actualizarFav(filtrado)
+        let String = JSON.stringify(filtrado)
+        localStorage.setItem('favoritos',String)
+
+        
+
+    }
     
+
+      
 
         render() {
         return(
 
-            <article className="single-card-movie">
+            <article class="single-card-movie">
                     <img 
                     className="cardimg"
                     src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} 

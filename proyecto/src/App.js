@@ -8,23 +8,27 @@ import Favoritos from './Screens/Favoritos/Favoritos';
 import Footer from './Components/Footer/Footer';
 import ScreenVerTodasUpcoming from './Screens/VerTodasUpcoming/VerTodasUpcoming';
 import NotFound from './Components/NotFound/NotFound';
+import './Styles/styles.css'
+
 function App() {
   return (
-   <>
-      <Header/>
-     
-      <Switch>
-        <Route path="/"  exact={true} component={Home}/>
-        <Route path="/detalle/pelicula/:id" component={ScreenDetalle}/>
-        <Route path="/VerTodasTopRating" component={ScreenVerTodasTopRating}/>
-        <Route path='/favoritos' component={Favoritos}/>
-        <Route path="/VerTodasUpcoming" component={ScreenVerTodasUpcoming}/>
-<Route path="*" component={NotFound}/>
+   < >
+      <div className="page">
+        <div className="panel">
+          <Header/>
+          
+          <Switch>
+            <Route path="/"  exact={true} component={Home}/>
+            <Route path="/detalle/pelicula/:id" component={ScreenDetalle}/>
+            <Route path="/VerTodasTopRating" component={ScreenVerTodasTopRating}/>
+            <Route path='/favoritos' component={Favoritos}/>
+            <Route path="/VerTodasUpcoming" component={ScreenVerTodasUpcoming}/>
+            <Route path="" component={NotFound}/>
+          </Switch>
 
-      </Switch>
-
-      <Footer/>
-      
+          <Footer/>
+        </div>
+      </div>
     </>
   );
 }
