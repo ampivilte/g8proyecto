@@ -18,32 +18,23 @@ class TarjetaPelicula extends Component {
     OcultarDescripcion() {
         this.setState({ VerDescripcion: 0 })
     }
-    agregarFav(id){
-        let local = localStorage.getItem('favoritos');
-      
-        if(local !== null){
-          let storageParseado = JSON.parse(local);
-          storageParseado.push(id);
-      
-          // Llamo a la función SOLO si está presente
-          if (this.props.actualizarFav) {
-            this.props.actualizarFav(storageParseado);
-          }
-      
-          let String = JSON.stringify(storageParseado);
-          localStorage.setItem('favoritos', String);
-        } else {
-          let array = [id];
-      
-          if (this.props.actualizarFav) {
-            this.props.actualizarFav(array);
-          }
-      
-          let String = JSON.stringify(array);
-          localStorage.setItem('favoritos', String);
+   agregarFav(id){
+        let local = localStorage.getItem('favoritos')
+        if(local !==null){
+            let storageParseado = JSON.parse(local)
+            storageParseado.push(id)
+            this.props.actualizarFav(storageParseado,id)
+            let String = JSON.stringify(storageParseado)
+            localStorage.setItem('favoritos',String)
+        }
+        else{
+            let array= [id]
+            this.props.actualizarFav(array,id)
+            let String = JSON.stringify(array)
+            localStorage.setItem('favoritos',String)
         }
     }
-    sacarFav(id){
+   sacarFav(id){
         let local = localStorage.getItem('favoritos')
         let storageParseado = JSON.parse(local)
         let filtrado = storageParseado.filter((elm) => elm !== id)

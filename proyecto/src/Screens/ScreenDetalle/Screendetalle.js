@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component} from 'react';
-import Detalle from '../../Components/Detalle/Detalle';
+import Detalle from '../../Components/detalle/detalle';
 
 class ScreenDetalle extends Component {
     constructor (props){
