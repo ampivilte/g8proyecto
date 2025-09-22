@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
+import "./VerTodasTopRating.css"
 
 class VerTodasTopRating extends Component {
     constructor () {
@@ -8,7 +9,6 @@ class VerTodasTopRating extends Component {
              peliculas: [],
              listaCompleta: [],
              pag: 1,
-             busqueda: ''
         };
     }
 
@@ -42,28 +42,35 @@ class VerTodasTopRating extends Component {
     filtrarContenido(event) {
         let texto = event.target.value.toLowerCase();
         let todas = this.state.listaCompleta;
-
         this.setState({busqueda: event.target.value});
 
-        texto === "" ? this.setState({peliculas: todas}) : this.setState({peliculas: todas.filter(peli => peli.title.toLowerCase()).includes(texto)});
+        let filtradas = this.state.listaCompleta.filter((peli) => peli.title.toLowerCase().includes(texto))
+
+        console.log(texto, filtradas)
+
+        this.setState({
+            peliculas: filtradas
+        })
     }
 
 
     render() {
         return(
-            <div className="Buscar">
+            <div className="pageTopRated">
 
-                <form onSubmit={(e) => this.evitarSubmit(e)}>
+                <form onSubmit={(e) => this.evitarSubmit(e)} className="searchBar">
                     <input type='text' placeholder='Buscar por título...' value={this.state.busqueda} onChange={(e) => this.filtrarContenido(e)}/>
                 </form>
 
                 {
-                    this.state.peliculas.length === 0 ? <h1>Cargando...</h1> :
-                    <div>
+                    this.state.peliculas.length === 0 ? <h1>Cargando...</h1> : 
+                    <div  className="moviesGrid">
                         {this.state.peliculas.map((elm, idx) => <TarjetaPelicula data={elm} key={idx + elm.title}/>)}
-                        <button onClick={() => this.cargarMas()}> Cargar más </button>
                     </div>
                 }
+                <div className="loadMore">
+                    <button onClick={() => this.cargarMas()} className="btn btn-ghost"> Cargar más </button>
+                </div>
             </div>
         ); 
     }

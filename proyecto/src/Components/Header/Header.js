@@ -4,7 +4,7 @@ import './Header.css';
 
 function Header() {
     return (
-        <header>
+        <header className="app-header">
             <div>
                 <img src="logo"/>
             </div>

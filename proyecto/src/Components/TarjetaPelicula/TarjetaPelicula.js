@@ -41,18 +41,12 @@ class TarjetaPelicula extends Component {
         this.props.actualizarFav(filtrado)
         let String = JSON.stringify(filtrado)
         localStorage.setItem('favoritos',String)
-
-        
-
     }
     
-
-      
-
         render() {
         return(
 
-            <article class="single-card-movie">
+            <article>
                     <img 
                     className="cardimg"
                     src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}`} 
