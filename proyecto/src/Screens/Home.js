@@ -13,8 +13,8 @@ class Home extends Component {
     render(){
         return(
             <div class="container">
-                <TopRated/>
                 <Upcoming/>
+                <TopRated/>
             </div>
         )
     }

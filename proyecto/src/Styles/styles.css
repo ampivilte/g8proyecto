@@ -44,8 +44,114 @@ body{
   gap: 24px;
 }
 
+.peli-card p {
+  width: 200px;
+}
+
 .marca{
   opacity:.75;
   color:var(--text-2);
 }
+
+/* Estilo general de botones */
+.btn-custom {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  color: #fff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  display: inline-block;
+  text-decoration: none; /* para links convertidos en botón */
+}
+
+/* Hover */
+.btn-custom:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Active (click) */
+.btn-custom:active {
+  transform: scale(0.96);
+}
+
+/* Link estilo botón */
+.link-detalle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  color: #fff;
+  font-size: 0.85rem;
+  text-decoration: none;      /* quita el subrayado */
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+/* Hover */
+.link-detalle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Active */
+.link-detalle:active {
+  transform: scale(0.96);
+}
+
+.btn-group {
+  display: flex;
+  align-items: center;
+  gap: 0;   /* espacio entre botones */
+  margin-top: 0;
+  justify-content: center; /* centra dentro de la tarjeta */
+}
+
+/* Centrar los textos dentro de cada tarjeta */
+.cardBody {
+  text-align: center;
+}
+
+/* Ajustar el título de cada tarjeta */
+.cardBody h5 {
+  font-size: 1.2rem;   /* más grande que el default */
+  font-weight: 600;    /* un poco más grueso */
+  margin: 0.5rem 0;
+}
+
+/* Opcional: mejorar contraste del título */
+.cardBody h5 a {
+  color: var(--text-1);
+  text-decoration: none;
+}
+.cardBody h5 a:hover {
+  text-decoration: underline;
+}
+
+.link-ver-todas {
+  display: block;             /* hace que ocupe todo el ancho */
+  text-align: center;         /* centra el texto */
+  margin: 1rem auto 1.5rem;   /* arriba 1rem, abajo 1.5rem */
+  font-weight: 600;
+  font-size: 1rem;
+  color: #ff4b2b;             /* rojo llamativo */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.link-ver-todas:hover {
+  color: #ff416c;
+  transform: translateY(-2px);
+  text-decoration: underline;
+}
+
+
 
