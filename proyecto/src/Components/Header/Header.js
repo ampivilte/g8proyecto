@@ -5,19 +5,16 @@ import './Header.css';
 function Header() {
     return (
         <header className="app-header">
-            <div>
-
+            <div>   
+                <form action="/search-results" method="GET" className="buscador">
+                        <input
+                            type="text"
+                            name=  "searchData" 
+                            placeholder=  "Buscar películas…"
+                        />
+                        <button type="submit" className='enter'>🔎</button>
+                    </form>
             </div>
-            <form action="/search-results" method="GET" className="search-form">
-                    <input
-                        type="text"
-                        name=  "searchData" 
-                        placeholder=  "Buscar películas…"
-                    />
-                    <button type="submit">Buscar</button>
-                </form>
-            
-
             <nav>
                 <ul>
                     <li><Link to="/"> Home </Link></li>
