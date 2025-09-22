@@ -25,7 +25,7 @@ class TarjetaPelicula extends Component {
           let storageParseado = JSON.parse(local);
           storageParseado.push(id);
       
-          // Llamo a la función SOLO si está presente
+          //acá estoy llamando a la función sólo si existe
           if (this.props.actualizarFav) {
             this.props.actualizarFav(storageParseado);
           }
@@ -55,9 +55,6 @@ class TarjetaPelicula extends Component {
 
     }
     
-
-      
-
         render() {
         return(
 

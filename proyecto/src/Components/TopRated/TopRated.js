@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import TarjetaPelicula from '../TarjetaPelicula/TarjetaPelicula';
-import "../../Screens/styles.css"
+import "../../Screens/styles.css";
 
 class TopRated extends Component {
     constructor () {

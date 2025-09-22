@@ -7,7 +7,19 @@ function Header() {
         <header className="app-header">
             <div>
                 <img src="logo"/>
+
+                <form action="/search-results" method="GET" className="search-form">
+                    <input
+                        type="text"
+                        name="searchData"   // SearchResults lee este parámetro
+                        placeholder="Buscar películas…"
+                        required
+                    />
+                    <button type="submit">Buscar</button>
+                </form>
             </div>
+
+            
 
             <nav>
                 <ul>
