@@ -80,9 +80,6 @@ class TarjetaPelicula extends Component {
                         {this.props.favorito ? <button onClick={() => this.sacarFav(this.props.data.id)} className="btn-custom">❌</button> : <button onClick={() => this.agregarFav(this.props.data.id)} className="btn-custom">♥️</button>}
                     </div>
                     
-                    <h5> <Link to ={`/detalle/pelicula/${this.props.data.id}`}>Ir a detalle</Link></h5>
-                    {this.props.favorito? <button onClick={()=> this.sacarFav(this.props.data.id)}>Quitar de favoritos</button>:
-                    <button onClick={()=> this.agregarFav(this.props.data.id)}>Agregar a favoritos</button>}
                 </div>
             </article>
 
