@@ -4,6 +4,8 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import TarjetaPelicula from '../TarjetaPelicula/TarjetaPelicula';
 import "../../Screens/styles.css"
 
+const api_key = 'e4c9de46fa2b077570ba8601a80bf4d6'
+
 class Upcoming extends Component {
     constructor () {
         super ()
@@ -14,7 +16,7 @@ class Upcoming extends Component {
         }
     }
     componentDidMount () {
-        fetch("https://api.themoviedb.org/3/movie/upcoming?api_key=e4c9de46fa2b077570ba8601a80bf4d6")
+        fetch(`https://api.themoviedb.org/3/movie/upcoming?api_key=${api_key}`)
         .then(res => res.json())
         .then(data => this.setState({peliculas : data.results}))
         .catch(e => console.log(e))
@@ -28,7 +30,7 @@ class Upcoming extends Component {
         return (
             <div>
                 {this.state.peliculas == null ? <h1>Cargando</h1> : <div> <h1>Proximos estrenos:</h1>
-                <section class="row cards" id="movies">
+                <section className="row cards" id="movies">
                 {
                     top5.map(( elm, idx) => <TarjetaPelicula favorito={this.state.favoritos.includes(elm.id)}  actaulizarFav={(array) => this.actualizarFav(array)}  data= {elm}  key={idx + elm.title}/>)
                 
