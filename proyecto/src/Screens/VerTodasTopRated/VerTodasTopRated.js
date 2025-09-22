@@ -11,7 +11,7 @@ class ScreenVerTodasTopRating extends Component {
     render(){
         return(
             <div>
-                <h1>Top Peliculas</h1>
+                <h1>Top Rated</h1>
                 <VerTodasTopRating />
             </div>
         )
