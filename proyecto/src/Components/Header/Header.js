@@ -6,9 +6,16 @@ function Header() {
     return (
         <header className="app-header">
             <div>
-            
-            </div>
 
+            </div>
+            <form action="/search-results" method="GET" className="search-form">
+                    <input
+                        type="text"
+                        name=  "searchData" 
+                        placeholder=  "Buscar películas…"
+                    />
+                    <button type="submit">Buscar</button>
+                </form>
             
 
             <nav>
