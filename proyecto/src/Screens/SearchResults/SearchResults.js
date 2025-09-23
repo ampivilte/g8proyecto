@@ -16,25 +16,33 @@ class SearchResults extends Component {
 
   componentDidMount() {
     const urlSearch = new URLSearchParams(this.props.location.search);
-    const termino = urlSearch.get("searchData") || "";
+    let termino = urlSearch.get("searchData");
+      if (termino === null) {
+        termino = "";
+      };
 
-    if (!termino.trim()) {
-      this.setState({ cargando: false, dataMovies: [] });
-      return;
-    }
-
-    fetch(
-      `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
-      )}&api_key=${api_key}&language=es-AR&include_adult=false`
-    )
+      if (termino === "") {
+        this.setState({ cargando: false, dataMovies: [] });
+        return;
+      }
+        fetch(
+          `https://api.themoviedb.org/3/search/movie?query=${termino}&api_key=${api_key}&language=es-AR&include_adult=false`
+        )
+  
       .then((res) => res.json())
       .then((data) => {
+        let peliculas = [];
+          if (data.results && data.results.length > 0) {
+            peliculas = data.results;
+          }
+      
         this.setState({
-          dataMovies: Array.isArray(data.results) ? data.results : [],
+          dataMovies: peliculas,
           cargando: false,
           error: "",
         });
       })
+
       .catch((err) => {
         console.log(err);
         this.setState({
@@ -46,6 +54,12 @@ class SearchResults extends Component {
 
   render() {
     const { dataMovies, cargando, error } = this.state;
+    let funcionFavoritos;
+    if (this.props.actualizarFav) {
+      funcionFavoritos = this.props.actualizarFav;
+    } else {
+      funcionFavoritos = function() {};
+    }
 
     return (
       <section className="home-block">
@@ -58,18 +72,18 @@ class SearchResults extends Component {
           <h3>Películas</h3>
         </div>
 
-        {cargando && <p>Cargando…</p>}
-        {error && <p>{error}</p>}
-        {!cargando && !error && dataMovies.length === 0 && (
+        {cargando ? <p>Cargando…</p> : null}
+        {error ? <p>{error}</p> : null}
+        {!cargando && !error && dataMovies.length === 0 ? (
           <p>No se encontraron películas para esa búsqueda.</p>
-        )}
+        ) : null}
 
         <div className="cards-grid">
           {dataMovies.map((movie) => (
             <TarjetaPelicula
               key={movie.id}
               data={movie} 
-              actualizarFav={this.props.actualizarFav || (() => {})}
+              actualizarFav={funcionFavoritos}
             />
           ))}
         </div>

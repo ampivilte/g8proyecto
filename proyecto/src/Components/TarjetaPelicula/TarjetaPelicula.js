@@ -34,11 +34,9 @@ class TarjetaPelicula extends Component {
         let filtrado = storageParseado.filter((elm) => elm !== id)
         this.props.actualizarFav(filtrado, id)
         let String = JSON.stringify(filtrado)
-        localStorage.setItem('favoritos', String)
+        localStorage.setItem('favoritos', String)}
 
 
-
-    }
 
     render() {
         return (
