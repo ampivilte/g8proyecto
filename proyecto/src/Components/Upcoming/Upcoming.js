@@ -32,7 +32,7 @@ class Upcoming extends Component {
                 {this.state.peliculas == null ? <h1>Cargando</h1> : <div> <h1>Proximos estrenos:</h1>
                 <section className="row cards" id="movies">
                 {
-                    top5.map(( elm, idx) => <TarjetaPelicula favorito={this.state.favoritos.includes(elm.id)}  actaulizarFav={(array) => this.actualizarFav(array)}  data= {elm}  key={idx + elm.title}/>)
+                    top5.map(( elm, idx) => <TarjetaPelicula favorito={this.state.favoritos.includes(elm.id)}  actualizarFav={(array) => this.actualizarFav(array)}  data= {elm}  key={idx + elm.title}/>)
                 
                 }
                  </section>

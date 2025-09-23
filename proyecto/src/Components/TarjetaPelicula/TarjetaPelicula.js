@@ -18,19 +18,13 @@ class TarjetaPelicula extends Component {
     OcultarDescripcion() {
         this.setState({ VerDescripcion: 0 })
     }
-   agregarFav(id){
+agregarFav(id){
         let local = localStorage.getItem('favoritos')
         if(local !==null){
             let storageParseado = JSON.parse(local)
             storageParseado.push(id)
             this.props.actualizarFav(storageParseado,id)
             let String = JSON.stringify(storageParseado)
-            localStorage.setItem('favoritos',String)
-        }
-        else{
-            let array= [id]
-            this.props.actualizarFav(array,id)
-            let String = JSON.stringify(array)
             localStorage.setItem('favoritos',String)
         }
     }
