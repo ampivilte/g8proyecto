@@ -9,6 +9,7 @@ import Footer from './Components/Footer/Footer';
 import ScreenVerTodasUpcoming from './Screens/VerTodasUpcoming/VerTodasUpcoming';
 import NotFound from './Components/NotFound/NotFound';
 import './Styles/styles.css'
+import SearchResults from './Screens/SearchResults/SearchResults';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
             <Route path="/VerTodasTopRating" component={ScreenVerTodasTopRating}/>
             <Route path='/favoritos' component={Favoritos}/>
             <Route path="/VerTodasUpcoming" component={ScreenVerTodasUpcoming}/>
-            <Route path="" component={NotFound}/>
+            <Route path= "/search-results" component={SearchResults} />
+            <Route component={NotFound}/>
           </Switch>
 
           <Footer/>
