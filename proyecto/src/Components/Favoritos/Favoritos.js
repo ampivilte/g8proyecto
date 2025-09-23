@@ -50,6 +50,8 @@ class Favoritos extends Component {
     }
   
     render() {
+
+      
       if (this.state.pelis.length === 0) {
         return <h1>No tenés favoritos</h1>;
       }
