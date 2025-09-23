@@ -1,15 +1,12 @@
-/* src/styles/globals.css */
 :root{
   --bg-1:#093298;
   --text-1:#e9edf1;
   --text-2:#c7cbd6;
 
-  /* glass */
   --glass: rgba(255,255,255,.08);
   --border: rgba(255,255,255,.18);
   --blur: 18px;
 
-  /* radios & sombras */
   --r-xl:28px;
   --shadow-1: 0 12px 30px rgba(0,0,0,.35);
 }
@@ -21,7 +18,6 @@ body{
   font-family: system-ui, -apple-system, "SF Pro Text", Inter, Roboto, Arial, sans-serif;
 }
 
-/* src/App.css */
 .page{
   min-height:100vh;
   display:grid;
@@ -44,8 +40,8 @@ body{
   gap: 24px;
 }
 
-.peli-card p {
-  width: 200px;
+.peli-card p{
+  width: 120px;
 }
 
 .marca{
@@ -53,7 +49,6 @@ body{
   color:var(--text-2);
 }
 
-/* Estilo general de botones */
 .btn-custom {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -65,22 +60,19 @@ body{
   transition: all 0.3s ease;
   margin-top: 0.5rem;
   display: inline-block;
-  text-decoration: none; /* para links convertidos en botón */
+  text-decoration: none;
 }
 
-/* Hover */
 .btn-custom:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: #fff;
   transform: translateY(-2px);
 }
 
-/* Active (click) */
 .btn-custom:active {
   transform: scale(0.96);
 }
 
-/* Link estilo botón */
 .link-detalle {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -88,21 +80,19 @@ body{
   padding: 0.4rem 1rem;
   color: #fff;
   font-size: 0.85rem;
-  text-decoration: none;      /* quita el subrayado */
+  text-decoration: none;
   display: inline-block;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 0.5rem;
 }
 
-/* Hover */
 .link-detalle:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: #fff;
   transform: translateY(-2px);
 }
 
-/* Active */
 .link-detalle:active {
   transform: scale(0.96);
 }
@@ -110,24 +100,21 @@ body{
 .btn-group {
   display: flex;
   align-items: center;
-  gap: 0;   /* espacio entre botones */
+  gap: 0;
   margin-top: 0;
-  justify-content: center; /* centra dentro de la tarjeta */
+  justify-content: center;
 }
 
-/* Centrar los textos dentro de cada tarjeta */
 .cardBody {
   text-align: center;
 }
 
-/* Ajustar el título de cada tarjeta */
 .cardBody h5 {
-  font-size: 1.2rem;   /* más grande que el default */
-  font-weight: 600;    /* un poco más grueso */
+  font-size: 1.2rem;
+  font-weight: 600;  
   margin: 0.5rem 0;
 }
 
-/* Opcional: mejorar contraste del título */
 .cardBody h5 a {
   color: var(--text-1);
   text-decoration: none;
@@ -137,12 +124,12 @@ body{
 }
 
 .link-ver-todas {
-  display: block;             /* hace que ocupe todo el ancho */
-  text-align: center;         /* centra el texto */
-  margin: 1rem auto 1.5rem;   /* arriba 1rem, abajo 1.5rem */
+  display: block;             
+  text-align: center;         
+  margin: 1rem auto 1.5rem; 
   font-weight: 600;
   font-size: 1rem;
-  color: #ff4b2b;             /* rojo llamativo */
+  color: #ff4b2b;      
   text-decoration: none;
   transition: color 0.3s ease, transform 0.2s ease;
 }

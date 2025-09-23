@@ -1,10 +1,8 @@
-/* ===== Página Top Películas ===== */
 .pageTopRated,
 .Buscar{
   padding: 20px 28px;
 }
 
-/* si tenés un <h1> dentro, que se vea grande */
 .pageTopRated h1,
 .Buscar h1{
   font-size: clamp(32px, 4.4vw, 44px);
@@ -12,7 +10,6 @@
   margin-bottom: 16px;
 }
 
-/* buscador tipo pill */
 .searchBar{
   margin-bottom: 18px;
   max-width: 420px;
@@ -27,14 +24,12 @@
   outline: none;
 }
 
-/* ===== Grilla de películas (una al lado de otra) ===== */
 .moviesGrid{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 28px;
 }
 
-/* Cada ítem devuelto por <TarjetaPelicula /> (sin envolver ni tocar tu JSX) */
 .moviesGrid > *{
   display: flex;
   flex-direction: column;
@@ -48,7 +43,6 @@
   box-shadow: 0 10px 26px rgba(0,0,0,.35);
 }
 
-/* Póster grande (sin tocar la tarjeta interna) */
 .moviesGrid > * img{
   width: 100%;
   height: 340px;
@@ -57,7 +51,6 @@
   display: block;
 }
 
-/* Título dentro de la tarjeta (sea h3/p/span) */
 .moviesGrid > * h3,
 .moviesGrid > * h4,
 .moviesGrid > * .title{
@@ -65,7 +58,6 @@
   line-height: 1.2;
 }
 
-/* ===== Acciones: hacer que enlaces y botones parezcan pills ===== */
 .moviesGrid > * a,
 .moviesGrid > * button{
   display: inline-flex;
@@ -74,7 +66,7 @@
   gap: 6px;
 
   padding: 9px 12px;
-  margin-right: 10px;           /* quedan uno al lado del otro si no hay <br> en tu tarjeta */
+  margin-right: 10px;  
   border-radius: 999px;
   text-decoration: none;
 
@@ -89,7 +81,6 @@
   transform: translateY(-1px);
 }
 
-/* Si alguno ya tiene tus clases .btn .btn-ghost, respetamos su look */
 .btn{
   appearance:none; border:none; outline:none;
   cursor:pointer; user-select:none;
@@ -101,24 +92,18 @@
   border: 1px solid rgba(255,255,255,.18);
 }
 
-/* Botón “Cargar más” centrado */
 .loadMore{
   display: flex;
   justify-content: center;
   margin: 22px 0 6px;
 }
 
-/* ===== Fix: tarjetas en columna y póster a ancho completo ===== */
-
-/* Cada item devuelto por <TarjetaPelicula /> */
 .moviesGrid > *{
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
 }
 
-/* Si la tarjeta interna tiene un contenedor de imagen,
-   lo forzamos a ocupar todo el ancho */
 .moviesGrid > * [class*="poster"],
 .moviesGrid > * [class*="img"],
 .moviesGrid > * [class*="image"],
@@ -126,16 +111,14 @@
   width: 100% !important;
 }
 
-/* La imagen se ve completa y consistente */
 .moviesGrid > * img{
   width: 100% !important;
-  height: 360px !important;   /* ajustá a 320–380 si querés */
+  height: 360px !important; 
   object-fit: cover !important;
   border-radius: 14px;
   display: block;
 }
 
-/* Título con buen peso */
 .moviesGrid > * h3,
 .moviesGrid > * h4,
 .moviesGrid > * .title{
@@ -144,14 +127,13 @@
   margin-top: 8px;
 }
 
-/* Acciones en una fila (sin agregar nodos) */
 .moviesGrid > * a,
 .moviesGrid > * button{
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 9px 12px;
-  margin-right: 10px;     /* quedan uno al lado del otro */
+  margin-right: 10px;   
   border-radius: 999px;
   text-decoration: none;
   color: var(--text-1);
@@ -165,7 +147,6 @@
   transform: translateY(-1px);
 }
 
-/* Responsive: póster más bajo en móviles */
 @media (max-width: 520px){
   .moviesGrid > * img{ height: 280px; }
 }

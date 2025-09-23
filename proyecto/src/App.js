@@ -4,7 +4,7 @@ import Home from "./Screens/Home"
 import ScreenDetalle from './Screens/ScreenDetalle/Screendetalle';
 import ScreenVerTodasTopRating from './Screens/VerTodasTopRated/VerTodasTopRated';
 import Header from './Components/Header/Header';
-import Favoritos from './Screens/Favoritos/Favoritos';
+import Favoritos from './Components/Favoritos/Favoritos';
 import Footer from './Components/Footer/Footer';
 import ScreenVerTodasUpcoming from './Screens/VerTodasUpcoming/VerTodasUpcoming';
 import NotFound from './Components/NotFound/NotFound';

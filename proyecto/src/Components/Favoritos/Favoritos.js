@@ -1,5 +1,5 @@
 import { Component } from "react";
-import TarjetaPelicula from "../../Components/TarjetaPelicula/TarjetaPelicula";
+import TarjetaPelicula from "../TarjetaPelicula/TarjetaPelicula";
 
 class Favoritos extends Component {
     constructor(props){

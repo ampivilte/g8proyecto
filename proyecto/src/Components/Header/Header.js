@@ -5,7 +5,8 @@ import './Header.css';
 function Header() {
     return (
         <header className="app-header">
-            <div>   
+            <div> 
+                <img src="image.png"/>  
                 <form action="/search-results" method="GET" className="buscador">
                         <input
                             type="text"

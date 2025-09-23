@@ -1,4 +1,4 @@
-import React, {Component}from 'react';
+import React, { Component } from 'react';
 import { Link } from "react-router-dom"
 import "../../Screens/styles.css"
 
@@ -18,30 +18,30 @@ class TarjetaPelicula extends Component {
     OcultarDescripcion() {
         this.setState({ VerDescripcion: 0 })
     }
-agregarFav(id){
+    agregarFav(id) {
         let local = localStorage.getItem('favoritos')
-        if(local !==null){
+        if (local !== null) {
             let storageParseado = JSON.parse(local)
             storageParseado.push(id)
-            this.props.actualizarFav(storageParseado,id)
+            this.props.actualizarFav(storageParseado, id)
             let String = JSON.stringify(storageParseado)
-            localStorage.setItem('favoritos',String)
+            localStorage.setItem('favoritos', String)
         }
     }
-   sacarFav(id){
+    sacarFav(id) {
         let local = localStorage.getItem('favoritos')
         let storageParseado = JSON.parse(local)
         let filtrado = storageParseado.filter((elm) => elm !== id)
-        this.props.actualizarFav(filtrado,id)
+        this.props.actualizarFav(filtrado, id)
         let String = JSON.stringify(filtrado)
-        localStorage.setItem('favoritos',String)
+        localStorage.setItem('favoritos', String)
 
-        
+
 
     }
-    
-        render() {
-        return(
+
+    render() {
+        return (
 
             <article className="peli-card">
                 <img
@@ -58,12 +58,9 @@ agregarFav(id){
                         <p>{this.props.data.overview}</p> :
                         <p></p>}
                     <div className="btn-group">
-                        <h5> <Link to={`/detalle/pelicula/${this.props.data.id}`}  className="link-detalle">Ver</Link></h5>
+                        <h5> <Link to={`/detalle/pelicula/${this.props.data.id}`} className="link-detalle">Ver</Link></h5>
                         {this.props.favorito ? <button onClick={() => this.sacarFav(this.props.data.id)} className="btn-custom">❌</button> : <button onClick={() => this.agregarFav(this.props.data.id)} className="btn-custom">♥️</button>}
                     </div>
-                    
-                    <h5> <Link to ={`/detalle/pelicula/${this.props.data.id}`}>Ir a detalle</Link></h5>
-                    {this.props.favorito? <button onClick={()=> this.sacarFav(this.props.data.id)}>sacar de  favoritos</button>:<button onClick={()=> this.agregarFav(this.props.data.id)}>Agregar a favoritos</button>}
                 </div>
             </article>
 
