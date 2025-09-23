@@ -25,7 +25,6 @@ class SearchResults extends Component {
 
     fetch(
       `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
-        termino
       )}&api_key=${api_key}&language=es-AR&include_adult=false`
     )
       .then((res) => res.json())
@@ -50,7 +49,6 @@ class SearchResults extends Component {
 
     return (
       <section className="home-block">
-        <Header />
 
         <div className="home-block__header">
           <h2>Resultados de búsqueda</h2>
