@@ -57,16 +57,19 @@ class Favoritos extends Component {
       }
   
       return (
-        <div>
-          {this.state.pelis.map((elm) => (
-            <TarjetaPelicula
-              key={elm.id}                
-              data={elm}                  
-              favorito={this.state.favoritos.includes(elm.id)}
-              actualizarFav={(array, id) => this.actualizarFav(array, id)}
-            />
-          ))}
-        </div>
+        this.state.pelis.length === 0
+         ? <h1>No tenés favoritos</h1>
+          : <div>
+              <h1>Tus Favoritos</h1>
+              {this.state.pelis.map((elm) => (
+                <TarjetaPelicula
+                  key={elm.id}
+                  data={elm}
+                  favorito={this.state.favoritos.includes(elm.id)}
+                  actualizarFav={(array, id) => this.actualizarFav(array, id)}
+                />
+              ))}
+            </div>
       );
     }
   }
